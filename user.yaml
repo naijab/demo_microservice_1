@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: demo-ms-user-service
+spec:
+  selector:
+    matchLabels:
+      foo: user-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        foo: user-service
+    spec:
+      containers:
+        - name: demo-ms-user-service
+          image: user_service
+          ports:
+            - containerPort: 1331
