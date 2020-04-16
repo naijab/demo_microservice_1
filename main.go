@@ -15,7 +15,7 @@ func main() {
 	e.Use(middleware.Recover())
 
 	// Routes
-	e.GET("/user", user.GetUser)
+	e.GET("/api/user", user.GetUser)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1331"))
